@@ -12,29 +12,28 @@ Download and install Anaconda Project
 
 Instalar dependências se necessário 
 
-NUMPY
+- NUMPY
 
 `~$ pip install numpy`
 
-PANDAS
+- PANDAS
 
 `~$ pip install pandas`
 
-PYTHON-BINANCE
+- PYTHON-BINANCE
 
 `~$ pip install python-binance`
 
-Download
+- Download
 
 `~$ git clone https://github.com/datacryptoanalytics/crypto-analysis.git`
 
 
 `~$ cd crypto-analysis`
 
-Iniciar algoritmo
+- Iniciar algoritmo
 
 `~$ python regressao-linear.py`
-
 
 
 <a href="https://liberapay.com/datacryptoanalytics/donate">  <img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>

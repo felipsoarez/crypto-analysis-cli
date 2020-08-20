@@ -8,6 +8,7 @@ import requests
 import json
 import pandas as pd
 import datetime as dt
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 
@@ -66,12 +67,14 @@ criptomoeda_fechamento_mediamovel100 = criptomoeda_fechamento.rolling(100).mean(
 criptomoeda_fechamento_mediamovelDailyReturn = criptomoeda_fechamento.pct_change()
 print('Retorno Diario', criptomoeda_fechamento_mediamovelDailyReturn)
 print('\nMédia Movel 100 Periodos: \n%s' %(criptomoeda_fechamento_mediamovel100 ))
-print('Média 100 periodos', criptomoeda_fechamento.mean())
+print('Média 100 periodos', criptomoeda_fechamento_mediamovel100.mean())
 media = criptomoeda_fechamento.mean()
 #============  Criar Gráfico
 #plt.style.use('ggplot')
 plt.style.use('bmh')
 plt.rcParams['figure.figsize'] = (9,5)
+plt.rcParams['font.sans-serif'] = ['Tahoma', 'DejaVu Sans',
+                               'Lucida Grande', 'Verdana']
 
 #============ Plotar indicadores
 plt.subplot(2, 1, 1)

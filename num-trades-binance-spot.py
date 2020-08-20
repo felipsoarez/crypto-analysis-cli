@@ -8,7 +8,6 @@ import requests
 import json
 import pandas as pd
 import datetime as dt
-import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 
@@ -63,18 +62,20 @@ criptomoeda_datas_abertura = criptomoeda['open_time'].astype('float')
 criptomoeda_fechamento_mediamovel = criptomoeda_fechamento.rolling(30).mean()
 # Média movel de 30 dias do Fechamento
 criptomoeda_fechamento_mediamovel100 = criptomoeda_fechamento.rolling(100).mean()
+medias = criptomoeda_num_trades.rolling(12).mean()
 # Retorno diário percentual
 criptomoeda_fechamento_mediamovelDailyReturn = criptomoeda_fechamento.pct_change()
-print('Retorno Diario', criptomoeda_fechamento_mediamovelDailyReturn)
-print('\nMédia Movel 100 Periodos: \n%s' %(criptomoeda_fechamento_mediamovel100 ))
-print('Média 100 periodos', criptomoeda_fechamento_mediamovel100.mean())
+#print('Retorno Diario', criptomoeda_fechamento_mediamovelDailyReturn)
+#print('\nMédia Movel 100 Periodos: \n%s' %(criptomoeda_fechamento_mediamovel100 ))
+print('Média 100 periodos', criptomoeda_fechamento.mean())
+print('Média num_trades', criptomoeda_num_trades.mean())
 media = criptomoeda_fechamento.mean()
+calc = criptomoeda_num_trades.mean()
 #============  Criar Gráfico
 #plt.style.use('ggplot')
 plt.style.use('bmh')
 plt.rcParams['figure.figsize'] = (9,5)
-plt.rcParams['font.sans-serif'] = ['Tahoma', 'DejaVu Sans',
-                               'Lucida Grande', 'Verdana']
+plt.rcParams['font.family'] = 'serif'
 
 #============ Plotar indicadores
 plt.subplot(2, 1, 1)
@@ -82,13 +83,15 @@ plt.plot(criptomoeda_fechamento, '-', color="black", linewidth=1)
 plt.plot(criptomoeda_fechamento_mediamovel, '-', color="red", linewidth=1)
 plt.plot(criptomoeda_fechamento_mediamovel100, '-', color="black", linewidth=1)
 plt.legend(['Close', 'MA30', 'MA100'], loc=0)
-plt.title('')
+plt.title('DataCrypto Analytics (@DataCryptoML)')
 plt.ylabel('Price')
 
 plt.subplot(2, 1, 2)
 plt.plot(criptomoeda_num_trades, '-', color="black", linewidth=1)
-plt.legend(['num_trades' ], loc=0)
-plt.xlabel('')
+plt.plot(medias, '-', color="red", linewidth=1)
+plt.legend(['num_trades', 'MA12'], loc=0)
+plt.xlabel('Github: @datacryptoanalytics', fontsize=9)
 plt.ylabel('Number of Trades')
+plt.gcf().autofmt_xdate()
 
 plt.show()

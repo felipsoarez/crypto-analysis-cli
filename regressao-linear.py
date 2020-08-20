@@ -90,35 +90,30 @@ print('Coefficients: \n', regr.coef_)
 #========   The mean squared error
 print("Mean squared error: %.2f"
       % mean_squared_error(y_test, criptomoeda_y_pred))
-
 # ========   Explained variance score: 1 is perfect prediction
 print('Score de variância(próximo de 1.0 bom > ruim): %.2f'
       % r2_score(y_test, criptomoeda_y_pred))
-
-
+print('Média previsões', criptomoeda_y_pred.mean())
+media = criptomoeda_y_pred.mean()
 #============  Criar Gráfico
 plt.style.use('bmh')
 plt.rcParams['figure.figsize'] = (9,5)
 
-plt.subplot(3, 1, 1)
+plt.subplot(2, 1, 1)
 plt.plot(criptomoeda_fechamento, '-', color="black", linewidth=1)
+plt.text(0.5, 3., "@DataCryptoML", family="serif")
 plt.legend(['Close', 'MA30', 'MA100'], loc=0)
 plt.title('')
 plt.ylabel('Price')
 plt.gcf().autofmt_xdate()
 
-plt.subplot(3, 1, 2)
+plt.subplot(2, 1, 2)
 plt.scatter(X_test, y_test, color="black", linewidth=1, alpha=0.5)
+plt.scatter(media, media,color="green", linewidth=1, alpha=0.8)
 plt.plot(X_test, criptomoeda_y_pred, color='red', linewidth=1)
-plt.legend(['linear regression', 'close'], loc=0)
-plt.xlabel('')
+plt.legend(['linear regression', 'close', 'prediction price $%.2f'%(media)], loc=0)
+plt.xlabel('DataCrypto Analytics (@DataCryptoML)')
 plt.ylabel('Linear Regression')
 plt.gcf().autofmt_xdate()
 
-plt.subplot(3, 1, 3)
-plt.plot(criptomoeda_num_trades, '-', color="black", linewidth=1)
-plt.legend(['num_trades', 'MA30', 'MA100'], loc=0)
-plt.title('')
-plt.ylabel('num_trades')
-plt.gcf().autofmt_xdate()
 plt.show()

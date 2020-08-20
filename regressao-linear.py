@@ -117,5 +117,5 @@ plt.legend(['linear regression', 'close', 'prediction price $%.2f'%(media)], loc
 plt.xlabel('GitHub: @datacryptoanalytics', fontsize=9)
 plt.ylabel('Linear Regression')
 plt.gcf().autofmt_xdate()
-
+plt.savefig('cryptocurrency.png')
 plt.show()

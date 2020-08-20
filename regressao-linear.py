@@ -98,21 +98,23 @@ media = criptomoeda_y_pred.mean()
 #============  Criar Gráfico
 plt.style.use('bmh')
 plt.rcParams['figure.figsize'] = (9,5)
+plt.rcParams['font.family'] = 'serif'
 
 plt.subplot(2, 1, 1)
 plt.plot(criptomoeda_fechamento, '-', color="black", linewidth=1)
-plt.text(0.5, 3., "@DataCryptoML", family="serif")
+#plt.text(10, 30, "@DataCryptoML", family="serif")
 plt.legend(['Close', 'MA30', 'MA100'], loc=0)
-plt.title('')
+plt.title('DataCrypto Analytics (@DataCryptoML)')
+#plt.xlabel('DataCrypto Analytics (@DataCryptoML)', labelpad=1)
 plt.ylabel('Price')
 plt.gcf().autofmt_xdate()
 
 plt.subplot(2, 1, 2)
 plt.scatter(X_test, y_test, color="black", linewidth=1, alpha=0.5)
-plt.scatter(media, media,color="green", linewidth=1, alpha=0.8)
+plt.scatter(media, media,color="yellow", linewidth=1, alpha=0.8)
 plt.plot(X_test, criptomoeda_y_pred, color='red', linewidth=1)
 plt.legend(['linear regression', 'close', 'prediction price $%.2f'%(media)], loc=0)
-plt.xlabel('DataCrypto Analytics (@DataCryptoML)')
+plt.xlabel('Github: @datacryptoanalytics', fontsize=9)
 plt.ylabel('Linear Regression')
 plt.gcf().autofmt_xdate()
 

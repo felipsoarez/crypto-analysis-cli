@@ -114,7 +114,7 @@ plt.scatter(X_test, y_test, color="black", linewidth=1, alpha=0.5)
 plt.scatter(media, media,color="yellow", linewidth=1, alpha=0.8)
 plt.plot(X_test, criptomoeda_y_pred, color='red', linewidth=1)
 plt.legend(['linear regression', 'close', 'prediction price $%.2f'%(media)], loc=0)
-plt.xlabel('Github: @datacryptoanalytics', fontsize=9)
+plt.xlabel('GitHub: @datacryptoanalytics', fontsize=9)
 plt.ylabel('Linear Regression')
 plt.gcf().autofmt_xdate()
 

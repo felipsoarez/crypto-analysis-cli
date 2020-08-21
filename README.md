@@ -3,6 +3,7 @@
 
  <a><img src="https://img.shields.io/badge/python-> 3.2-blue.svg"></a>     <img src="http://img.shields.io/liberapay/receives/datacryptoanalytics.svg?logo=liberapay">  <img alt="GitHub" src="https://img.shields.io/github/license/datacryptoanalytics/crypto-analysis">
  
+![](gif.gif)
 
 Download and install Anaconda Project
 

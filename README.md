@@ -3,7 +3,6 @@
 
  <a><img src="https://img.shields.io/badge/python-> 3.2-blue.svg"></a>     <img src="http://img.shields.io/liberapay/receives/datacryptoanalytics.svg?logo=liberapay">  <img alt="GitHub" src="https://img.shields.io/github/license/datacryptoanalytics/crypto-analysis">
  
-![](gif.gif)
 
 Download and install Anaconda Project
 
@@ -25,14 +24,17 @@ Instalar dependências se necessário
 
 - Download
 
-`~$ git clone https://github.com/datacryptoanalytics/crypto-analysis.git`
+`~$ git clone https://github.com/datacryptoanalytics/crypto-analysis-cli.git`
 
 
-`~$ cd crypto-analysis`
+`~$ cd crypto-analysis-cli`
 
 - Iniciar algoritmo
 
 `~$ python regressao-linear.py`
+`~$ python num-trades-binance-spot.py`
+
+![](gif.gif)
 
 
 <a href="https://liberapay.com/datacryptoanalytics/donate">  <img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>

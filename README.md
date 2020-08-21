@@ -32,6 +32,7 @@ Instalar dependências se necessário
 - Iniciar algoritmo
 
 `~$ python regressao-linear.py`
+
 `~$ python num-trades-binance-spot.py`
 
 ![](gif.gif)

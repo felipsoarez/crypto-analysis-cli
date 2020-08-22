@@ -52,41 +52,35 @@ criptomoeda_datas_fechamento = criptomoeda['close_time'].astype('float')
 criptomoeda_datas_abertura = criptomoeda['open_time'].astype('float')
 taker_base_vol = criptomoeda['taker_base_vol'].astype('float')
 taker_quote_vol = criptomoeda['taker_quote_vol'].astype('float')
-
-
+# Média movel de 14 dias do Fechamento
+criptomoeda_fechamento_mediamovel = criptomoeda['c'].rolling(30).mean()
+# Média movel de 30 dias do Fechamento
+criptomoeda_fechamento_mediamovel100 = criptomoeda['c'].rolling(100).mean()
 #======== Importar biblioteca SKLEARN
 import numpy as np
 from sklearn import linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 from matplotlib import rcParams
-
 #=========
 criptomoeda_regressao = criptomoeda_abertura
-
 #=========   Treinar X
 criptomoeda_X_train = criptomoeda_abertura
 criptomoeda_X_test = criptomoeda_abertura
 X_train = np.reshape(criptomoeda_X_train, (-1,1))
 X_test = np.reshape(criptomoeda_X_test, (-1,1))
-
 #==========   Treinar Y
 criptomoeda_y_train = criptomoeda_fechamento
 criptomoeda_y_test = criptomoeda_fechamento
 y_train = np.reshape(criptomoeda_y_train, (-1,1))
 y_test = np.reshape(criptomoeda_y_test, (-1,1))
-
 #=========   Criar objeto de regressão linear
 regr = linear_model.LinearRegression()
-
 #=========   Treine o modelo usando os conjuntos de treinamento
 regr.fit(X_train, y_train)
-
 #========   Faça previsões usando o conjunto de teste
 criptomoeda_y_pred = regr.predict(X_test)
-
 #========   The coefficients
 print('Coefficients: \n', regr.coef_)
-
 #========   The mean squared error
 print("Mean squared error: %.2f"
       % mean_squared_error(y_test, criptomoeda_y_pred))
@@ -102,20 +96,33 @@ plt.rcParams['font.family'] = 'serif'
 
 plt.subplot(2, 1, 1)
 plt.plot(criptomoeda_fechamento, '-', color="black", linewidth=1)
+#plt.plot(criptomoeda_fechamento_mediamovel, '-', color="red", linewidth=1)
+#plt.plot(criptomoeda_fechamento_mediamovel100, '-', color="black", linewidth=1)
 #plt.text(10, 30, "@DataCryptoML", family="serif")
 plt.legend(['Close', 'MA30', 'MA100'], loc=0)
 plt.title('DataCrypto Analytics (@DataCryptoML)')
 #plt.xlabel('DataCrypto Analytics (@DataCryptoML)', labelpad=1)
 plt.ylabel('Price')
-plt.gcf().autofmt_xdate()
 
 plt.subplot(2, 1, 2)
 plt.scatter(X_test, y_test, color="black", linewidth=1, alpha=0.5)
-plt.scatter(media, media,color="yellow", linewidth=1, alpha=0.8)
+plt.scatter(media, media,color="blue", linewidth=3, alpha=0.8)
 plt.plot(X_test, criptomoeda_y_pred, color='red', linewidth=1)
 plt.legend(['linear regression', 'close', 'prediction price $%.2f'%(media)], loc=0)
 plt.xlabel('GitHub: @datacryptoanalytics', fontsize=9)
 plt.ylabel('Linear Regression')
-plt.gcf().autofmt_xdate()
-plt.savefig('cryptocurrency.png')
 plt.show()
+#------   Salvando o modelo -----------------
+# importa o pickle
+import pickle
+# Define o nome do arquivo em disco que irá
+# guardar o nosso modelo
+filename='regressor_model.sav'
+# salva o modelo no disco
+pickle.dump(regr, open(filename, 'wb'))
+# Carregando o modelo do disco
+loaded_model = pickle.load(open(filename, 'rb'))
+# Atribui a variável result o score do modelo
+result = loaded_model.score(X_test, y_test)
+#Imprime o resultado
+print(result)

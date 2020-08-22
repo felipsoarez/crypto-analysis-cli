@@ -87,7 +87,7 @@ print("Mean squared error: %.2f"
 # ========   Explained variance score: 1 is perfect prediction
 print('Score de variância(próximo de 1.0 bom > ruim): %.2f'
       % r2_score(y_test, criptomoeda_y_pred))
-print('Média previsões', criptomoeda_y_pred.mean())
+print('Média previsões:', criptomoeda_y_pred.mean())
 media = criptomoeda_y_pred.mean()
 #============  Criar Gráfico
 plt.style.use('bmh')
@@ -125,4 +125,4 @@ loaded_model = pickle.load(open(filename, 'rb'))
 # Atribui a variável result o score do modelo
 result = loaded_model.score(X_test, y_test)
 #Imprime o resultado
-print(result)
+print('Score do modelo salvo:', result)

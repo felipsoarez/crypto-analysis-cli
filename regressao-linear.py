@@ -43,6 +43,7 @@ def get_bars(symbol, interval = interval):
 #========   Organizando Variaveis
 criptomoeda = get_bars(criptomoeda)
 criptomoeda_fechamento = criptomoeda['c'].astype('float').values
+criptomoeda_close = criptomoeda['c'].astype('float')
 criptomoeda_abertura = criptomoeda['o'].astype('float').values
 criptomoeda_num_trades = criptomoeda['num_trades'].astype('float')
 criptomoeda_maxima = criptomoeda['h'].astype('float')
@@ -52,6 +53,8 @@ criptomoeda_datas_fechamento = criptomoeda['close_time'].astype('float')
 criptomoeda_datas_abertura = criptomoeda['open_time'].astype('float')
 taker_base_vol = criptomoeda['taker_base_vol'].astype('float')
 taker_quote_vol = criptomoeda['taker_quote_vol'].astype('float')
+closeprice = criptomoeda_close.iloc[-1]
+print('Close Price: $%.2f'%(closeprice))
 # Média movel de 14 dias do Fechamento
 criptomoeda_fechamento_mediamovel = criptomoeda['c'].rolling(30).mean()
 # Média movel de 30 dias do Fechamento
@@ -100,7 +103,7 @@ plt.plot(criptomoeda_fechamento, '-', color="black", linewidth=1)
 #plt.plot(criptomoeda_fechamento_mediamovel100, '-', color="black", linewidth=1)
 #plt.text(10000, 3000, "@DataCryptoML", family="serif")
 plt.gcf().autofmt_xdate()
-plt.legend(['Close', 'MA30', 'MA100'], loc=0)
+plt.legend(['Close $%.2f'%(closeprice), 'MA30', 'MA100'], loc=0)
 plt.title('DataCrypto Analytics (@DataCryptoML)')
 #plt.xlabel('DataCrypto Analytics (@DataCryptoML)', labelpad=1)
 plt.ylabel('Price')

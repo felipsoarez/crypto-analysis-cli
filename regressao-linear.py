@@ -10,8 +10,6 @@ import talib
 import pandas as pd
 import datetime as dt
 from matplotlib import pyplot as plt
-
-
 #=========  Esolhe a Criptomoedas e valores de negociação
 criptomoeda = input('DataCrypto Analytics | Regressão Linear |'
                     '\n\n | Twitter @DataCryptoML |'

@@ -10,8 +10,12 @@ import talib
 import pandas as pd
 import datetime as dt
 from matplotlib import pyplot as plt
+import pyfiglet
+
+ascii_banner = pyfiglet.figlet_format("DataCrypto Analytics")
+print(ascii_banner)
 #=========  Esolhe a Criptomoedas e valores de negociação
-criptomoeda = input('DataCrypto Analytics | Regressão Linear |'
+criptomoeda = input(' |Algoritmo: Regressão Linear |'
                     '\n\n | Twitter @DataCryptoML |'
                     '\n | Github @datacryptoanalytics |'
                     '\n \nDigite o par de criptomoedas listada na Binance: ')

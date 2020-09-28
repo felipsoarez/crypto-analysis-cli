@@ -1,26 +1,16 @@
-<a href="https://datacryptoanalytics.github.io/"><img src="https://datacryptoanalytics.github.io/images/logo-datacrypto-analytics.png"  width="380"/></a>
 
-
- <a><img src="https://img.shields.io/badge/python-> 3.2-blue.svg"></a>     <img src="http://img.shields.io/liberapay/receives/datacryptoanalytics.svg?logo=liberapay">  <img alt="GitHub" src="https://img.shields.io/github/license/datacryptoanalytics/crypto-analysis">
+ <img alt="anaconda" src="https://anaconda.org/datacryptoanalytics/crypto-analysis-cli/badges/version.svg"> <a><img src="https://img.shields.io/badge/python-> 3.2-blue.svg"></a>     <img src="http://img.shields.io/liberapay/receives/datacryptoanalytics.svg?logo=liberapay">  <img alt="GitHub" src="https://img.shields.io/github/license/datacrypto-analytics/crypto-analysis-cli"> <img alt="anaconda" src="https://anaconda.org/datacryptoanalytics/crypto-analysis-cli/badges/latest_release_relative_date.svg">
  
+
+![](gif.gif)
+
+<h3><b>Instalação</b></h3>
+
 
 Download and install Anaconda Project
 
 - [anaconda.com](https://www.anaconda.com/products/individual#Downloads)
 
-Instalar dependências se necessário 
-
-- NUMPY
-
-`~$ pip install numpy`
-
-- PANDAS
-
-`~$ pip install pandas`
-
-- PYTHON-BINANCE
-
-`~$ pip install python-binance`
 
 - Download
 
@@ -29,13 +19,22 @@ Instalar dependências se necessário
 
 `~$ cd crypto-analysis-cli`
 
+Instalar dependências se necessário 
+
+- Instalar Requeriments.txt
+
+`~$ pip install -r requirements.txt`
+
+- PYTHON-BINANCE
+
+`~$ pip install python-binance`
+
 - Iniciar algoritmo
 
 `~$ python regressao-linear.py`
 
 `~$ python num-trades-binance-spot.py`
 
-![](gif.gif)
 
 
 <a href="https://liberapay.com/datacryptoanalytics/donate">  <img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>

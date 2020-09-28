@@ -29,23 +29,6 @@ Download and install Anaconda Project
 
 `~$ cd crypto-analysis-cli`
 
-Instalar dependências se necessário 
-
-- Instalar Requeriments.txt
-
-`~$ pip install -r requirements.txt`
-
-- PYTHON-BINANCE
-
-`~$ pip install python-binance`
-
-- Iniciar algoritmo
-
-`~$ python regressao-linear.py`
-
-`~$ python num-trades-binance-spot.py`
-
-
 
 
 Abrir `datacrypto-analytics_sentimento.py ` e alterar as seguintes linhas:
@@ -62,10 +45,14 @@ Abrir `datacrypto-analytics_sentimento.py ` e alterar as seguintes linhas:
 `
 
 
-<h3>Instalar dependências necessárias </h3>
+<h4>Instalar dependências necessárias </h4>
 
 `datacrypto-analytics_sentimento.py `
 
+
+- Instalar Requeriments.txt
+
+`~$ pip install -r requirements.txt`
 
 
 - NumPy
@@ -80,30 +67,24 @@ Abrir `datacrypto-analytics_sentimento.py ` e alterar as seguintes linhas:
 
 `~$ pip install textblob`
 
-- Inciar Algortimo 
+
+- PYTHON-BINANCE
+
+`~$ pip install python-binance`
+
+- Iniciar algoritmo
+
+`~$ python regressao-linear.py`
+
+`~$ python num-trades-binance-spot.py`
 
 `~$ python datacrypto-analytics_sentimento.py`
 
 
 
-<h3>Instalar dependências necessárias </h3>
-
-`datacrypto-analytics_regressao_linear.py`
 
 
-- Matplotlib
 
-`~$ pip install matplotlib`
-
-- Pandas
-
-`~$ pip install pandas`
-
-
-- Inciar Algortimo 
-
-
-`~$ python datacrypto-analytics_regressao_linear.py`
 
 
 

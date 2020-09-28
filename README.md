@@ -1,6 +1,16 @@
 
  <img alt="anaconda" src="https://anaconda.org/datacryptoanalytics/crypto-analysis-cli/badges/version.svg"> <a><img src="https://img.shields.io/badge/python-> 3.2-blue.svg"></a>     <img src="http://img.shields.io/liberapay/receives/datacryptoanalytics.svg?logo=liberapay">  <img alt="GitHub" src="https://img.shields.io/github/license/datacrypto-analytics/crypto-analysis-cli"> <img alt="anaconda" src="https://anaconda.org/datacryptoanalytics/crypto-analysis-cli/badges/latest_release_relative_date.svg">
  
+ 
+
+ <h3> <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/">DataCrypto Analytics - Quantitative Analysis Algorithms</a></h3>
+
+
+Algoritmos Machine Learning Quantitativo para o mercado de câmbio <b>(Forex)</b> e <b>Criptomoedas</b>. Desenvolvido com rede neural que analisa as possiveís movimentações do mercado.
+
+- Observe que no site temos a página <b>Resultados</b>, está hospedado o <i>Backtesting</i> da nossa última versão, e em nosso canal no  <a rel="Youtube" href="https://www.youtube.com/channel/UCxfGBCV9E04Uw4flJLjBCqg?view_as=subscriberl">Youtube</a> vídeos de instalação e configuração.
+
+
 
 ![](gif.gif)
 
@@ -34,6 +44,73 @@ Instalar dependências se necessário
 `~$ python regressao-linear.py`
 
 `~$ python num-trades-binance-spot.py`
+
+
+
+
+Abrir `datacrypto-analytics_sentimento.py ` e alterar as seguintes linhas:
+
+`13 consumer_key = 'SUA API KEY TWITTER'`
+
+`14 consumer_secret = 'SUA API SECRET KEY TWITTER'`
+
+`15`
+ 
+`16 access_token = 'SEU ACCESS TOKEN'`
+ 
+`17 access_token_secret = 'SEU ACCESS TOKEN'`
+`
+
+
+<h3>Instalar dependências necessárias </h3>
+
+`datacrypto-analytics_sentimento.py `
+
+
+
+- NumPy
+
+`~$ pip install numpy`
+
+- Tweepy
+
+`~$ pip install tweepy`
+
+- Textblob
+
+`~$ pip install textblob`
+
+- Inciar Algortimo 
+
+`~$ python datacrypto-analytics_sentimento.py`
+
+
+
+<h3>Instalar dependências necessárias </h3>
+
+`datacrypto-analytics_regressao_linear.py`
+
+
+- Matplotlib
+
+`~$ pip install matplotlib`
+
+- Pandas
+
+`~$ pip install pandas`
+
+
+- Inciar Algortimo 
+
+
+`~$ python datacrypto-analytics_regressao_linear.py`
+
+
+
+
+
+
+<i>Atenção: Este repositório não contém os algoritmos que estão a venda em nosso <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/">site</a>. </i>
 
 
 

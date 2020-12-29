@@ -3,25 +3,42 @@
  
  
 
- <h3> <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/">DataCrypto Analytics - Quantitative Analysis Algorithms</a></h3>
+ <h1> <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/">DataCrypto Analytics </a></h1>
+ <h3> <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/"> Quantitative Analysis Algorithms </a></h3>
+
+ 
 
 
-Algoritmos Machine Learning Quantitativo para o mercado de <b>Criptomoedas</b>. Desenvolvido com rede neural e árvore de decisões que analisa as possiveís movimentações do mercado.
+Algoritmos Machine Learning para o mercado de <b>Criptomoedas</b>. Desenvolvido com rede neural e árvore de decisões que analisa as possiveís movimentações do mercado.
 
 - Observe que no site temos a página <b>Resultados</b>, está hospedado o <i>Backtesting</i> da nossa última versão, e em nosso canal no  <a rel="Youtube" href="https://www.youtube.com/channel/UCxfGBCV9E04Uw4flJLjBCqg?view_as=subscriberl">Youtube</a> vídeos de instalação e configuração.
 
+------
+Quantitative Machine Learning Algorithms for the <b> Cryptocurrencies </b> market. Developed with neural network and decision tree that analyzes the possible movements of the market.
+
+- Note that on the website we have the <b> Results </b> page, the <i> Backtesting </i> of our latest version is hosted, and on our channel at <a rel = "Youtube" href = "https: //www.youtube.com/channel/UCxfGBCV9E04Uw4flJLjBCqg?view_as=subscriberl">Youtube </a> installation and configuration videos.
+-----
+![](giff.gif)
+
+<p align="center">
+  <img width="640" height="360" src="https://j.gifs.com/Gvl9ML.gif">
+</p>
+
+<<<<<<< HEAD
+![](images/gif.gif)
+=======
+>>>>>>> 2b7f88affca4a772e18e08c6a3b066d8544e22fc
 
 
-![](gif.gif)
 
-<h3><b>Instalação</b></h3>
+<h2><b>Instalação/Installation</b></h2>
 
 
 Download and install Anaconda Project
 
 - [anaconda.com](https://www.anaconda.com/products/individual#Downloads)
 
-
+-----
 - Download
 
 `~$ git clone https://github.com/datacryptoanalytics/crypto-analysis-cli.git`
@@ -29,9 +46,11 @@ Download and install Anaconda Project
 
 `~$ cd crypto-analysis-cli`
 
+`~$ cd algorithms`
 
-
+-----
 - Abrir `datacrypto-analytics_sentimento.py ` e alterar as seguintes linhas:
+- Open `datacrypto-analytics_sentimento.py` and change the following lines:
 
 `13 consumer_key = 'SUA API KEY TWITTER'`
 
@@ -42,12 +61,11 @@ Download and install Anaconda Project
 `16 access_token = 'SEU ACCESS TOKEN'`
  
 `17 access_token_secret = 'SEU ACCESS TOKEN'`
-`
 
 
-<h4>Instalar dependências necessárias </h4>
+------
 
-`datacrypto-analytics_sentimento.py `
+<h4>Instalar dependências necessárias/Install required dependencies </h4>
 
 
 - Instalar Requeriments.txt
@@ -72,7 +90,10 @@ Download and install Anaconda Project
 
 `~$ pip install python-binance`
 
-- Iniciar algoritmo
+-------
+
+<h4>Iniciar algoritmo/Run algorithms</h4>
+
 
 `~$ python regressao-linear.py`
 
@@ -84,31 +105,15 @@ Download and install Anaconda Project
 
 
 
+<i>Atenção: Este repositório não contém os algoritmos a venda em nosso <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/">site</a>. </i>
 
-
-
-
-
-
-
-<i>Atenção: Este repositório não contém os algoritmos que estão a venda em nosso <a rel="datacryptoanalytics" href="https://datacryptoanalytics.github.io/">site</a>. </i>
-
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="FFR98NAK6HY9Y" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
-
-
-<a href="https://liberapay.com/datacryptoanalytics/donate">  <img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+------
 
 
 
 
 <img alt="Keybase XLM" src="https://img.shields.io/keybase/btc/fsoarez">
 <img alt="Keybase XLM" src="https://img.shields.io/keybase/xlm/fsoarez">
+
+<a href="https://www.buymeacoffee.com/datacryptoml" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 20px !important;width: 100px !important;" ></a>
 

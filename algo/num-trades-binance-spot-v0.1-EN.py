@@ -3,31 +3,33 @@
 """
 @author: Felipe Soares
 """
-import numpy
-import talib
+
 import requests
 import json
 import pandas as pd
 import datetime as dt
 import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
+import pyfiglet
 
-#=========
-criptomoeda = input('DataCrypto Analytics | Criar gráfico de preços e número de negociações |'
-                    '\n\n | Twitter @DataCryptoML |'
-                    '\n | Github @datacryptoanalytics |'
-                    '\n \nDigite o par de criptomoedas listada na Binance: ')
+ascii_banner = pyfiglet.figlet_format("DataCrypto Analytics")
+print(ascii_banner)
+#========================
+criptomoeda = input('  | Create price chart and number of trades |'
+                    '\n\n  | Twitter @DataCryptoML |'
+                    '\n  | Github @datacryptoanalytics |'
+                    '\n \nEnter the pair of cryptocurrencies listed on Binance: ')
 
-print('\nO par de criptomoeda informada foi: %s'
-      '\n\nDataCrypto Analytics esta buscando os valores,'
-      ' por favor aguarde alguns segundos!' %(criptomoeda))
+print('\nThe cryptocurrency pair reported was: %s'
+      '\n\nDataCrypto Analytics is scanning for values,'
+      ' please wait a few seconds!' %(criptomoeda))
 
 
 root_url = 'https://api.binance.com/api/v1/klines'
 
 symbol = criptomoeda
 
-interval = input('Digite o Timeframe (Exemplo: 15m, 30m, 1h, 1d, 1M): ')
+interval = input('Enter the Timeframe (Example: 15m, 30m, 1h, 1d, 1M): ')
 
 url = root_url + '?symbol=' + symbol + '&interval=' + interval
 
@@ -59,23 +61,6 @@ criptomoeda_datas_fechamento = criptomoeda['close_time'].astype('float')
 criptomoeda_datas_abertura = criptomoeda['open_time'].astype('float')
 
 #============  Indicadores
-cci = talib.CCI(criptomoeda_maxima, criptomoeda_minima, criptomoeda_fechamento, timeperiod=14)
-atr = talib.ATR(criptomoeda_maxima, criptomoeda_minima, criptomoeda_fechamento, timeperiod=14)
-
-midpoint = talib.MIDPOINT(criptomoeda_fechamento, timeperiod=14)
-
-
-real = talib.T3(criptomoeda_fechamento, timeperiod=14)
-
-#rsi = talib.RSI(criptomoeda_fechamento, timeperiod=14)
-
-crows = talib.CDLKICKINGBYLENGTH(criptomoeda_abertura, criptomoeda_maxima, criptomoeda_minima, criptomoeda_fechamento)
-
-def RSI(close,timePeriod):    
-    rsi = ta.RSI(criptomoeda_fechamento,timePeriod)
-    rsiSell = (rsi>70) & (rsi.shift(1)<=70)
-    rsiBuy = (rsi<30) & (rsi.shift(1)>=30)
-    return rsiSell,rsiBuy, rsi
 # Média movel de 14 dias do Fechamento
 criptomoeda_fechamento_mediamovel = criptomoeda_fechamento.rolling(30).mean()
 # Média movel de 30 dias do Fechamento
@@ -100,25 +85,16 @@ plt.subplot(2, 1, 1)
 plt.plot(criptomoeda_fechamento, '-', color="black", linewidth=1)
 plt.plot(criptomoeda_fechamento_mediamovel, '-', color="red", linewidth=1)
 plt.plot(criptomoeda_fechamento_mediamovel100, '-', color="black", linewidth=1)
-plt.plot(midpoint, '-', color="orange", linewidth=1)
 plt.legend(['Close', 'MA30', 'MA100'], loc=0)
 plt.title('DataCrypto Analytics (@DataCryptoML)')
 plt.ylabel('Price')
 
 plt.subplot(2, 1, 2)
-plt.plot(atr, '-', color="black", linewidth=1)
-plt.legend(['RSI', 'MA12'], loc=0)
-plt.xlabel('Github: @datacrypto-analytics', fontsize=9)
-plt.ylabel('RSI')
-plt.gcf().autofmt_xdate()
-
-"""
-plt.subplot(2, 1, 2)
 plt.plot(criptomoeda_num_trades, '-', color="black", linewidth=1)
 plt.plot(medias, '-', color="red", linewidth=1)
 plt.legend(['num_trades', 'MA12'], loc=0)
-plt.xlabel('Github: @datacrypto-analytics', fontsize=9)
+plt.xlabel('Github: @datacryptoanalytics', fontsize=9)
 plt.ylabel('Number of Trades')
 plt.gcf().autofmt_xdate()
-"""
+
 plt.show()

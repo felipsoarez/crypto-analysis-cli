@@ -14,9 +14,11 @@ setuptools.setup(
     url="https://github.com/datacrypto-analytics/crypto-analysis-cli",
     packages=setuptools.find_packages(),
     classifiers=[
+		"Development Status :: 2 - Pre-Alpha",
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: Apache License 2.0",
-        "Operating System :: OS Independent",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: POSIX :: Linux",
+		"Framework :: Matplotlib",
     ],
     python_requires='>=3.6',
 )
